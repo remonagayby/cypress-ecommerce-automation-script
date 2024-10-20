@@ -1,0 +1,33 @@
+{
+  "name": "cypress-ecommerce-automation-script",
+  "version": "1.0.0",
+  "description": "Automation Cypress script for an e-commerce website",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run --e2e --browser=chrome --headed --spec cypress/e2e/* --reporter mocha-allure-reporter",
+    "report:allure": "allure generate ./allure-results --clean -o ./allure-report && allure open ./allure-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remonagayby/cypress-ecommerce-automation-script.git"
+  },
+  "author": "Remon Agayby",
+  "license": "MIT",
+  "devDependencies": {
+    "@faker-js/faker": "^9.0.3",
+    "@shelex/cypress-allure-plugin": "^2.40.1",
+    "allure-commandline": "^2.30.0",
+    "cypress": "^13.15.0",
+    "cypress-xpath": "^2.0.1",
+    "mocha-allure-reporter": "^1.4.0"
+  },
+  "dependencies": {
+    "chai": "^5.1.1",
+    "cypress-real-events": "^1.13.0",
+    "save-dev": "^0.0.1-security"
+  },
+  "bugs": {
+    "url": "https://github.com/remonagayby/cypress-ecommerce-automation-script/issues"
+  },
+  "homepage": "https://github.com/remonagayby/cypress-ecommerce-automation-script#readme"
+}

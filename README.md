@@ -11,3 +11,9 @@
 
 * `npm init` to setup node project with package.json
 * `npm install --save-dev cypress` to install cypress as dev dependency
+
+### Running All Test Cases
+* `npm run test`
+
+### Open Allure Reports
+* `npm run report:allure`

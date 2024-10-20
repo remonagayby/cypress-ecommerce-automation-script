@@ -1,0 +1,12 @@
+{
+  "homePage": "https://www.automationexercise.com/",
+  "loginPage": "https://www.automationexercise.com/login",
+  "signUpPage": "https://www.automationexercise.com/signup",
+  "accountCreatedPage": "https://www.automationexercise.com/account_created",
+  "cartPage": "https://www.automationexercise.com/view_cart",
+  "checkoutPage": "https://www.automationexercise.com/checkout",
+  "deleteAccountPage": "https://www.automationexercise.com/delete_account",
+  "paymentPage": "https://www.automationexercise.com/payment",
+  "paymentConfirmationPage": "https://www.automationexercise.com/payment",
+  "paymentDonePage": "https://www.automationexercise.com/payment_done/1400"
+}

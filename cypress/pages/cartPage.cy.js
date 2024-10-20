@@ -14,6 +14,10 @@ class CartPage {
         return cy.get('a[class="btn btn-default check_out"]');
     }
 
+    #txtCheckoutAlert() {
+        return cy.get('.modal-content').children('.modal-body');
+    }
+
     verifyCartPageUrl() {
         cy.fixture('url').then(url => {
             this.#pageURL().should('eq', url.cartPage);
@@ -25,13 +29,19 @@ class CartPage {
         this.#productsTableList()
             .its('length')
             .then((totalItems) => {
-                cy.wrap(totalItems).should('be.visible');
+                cy.wrap(totalItems).should('eq', 2);
             });
+        return this;    
     }
 
     clickCheckoutBtn() {
         this.#btnCheckout().click();
         return new CheckOutPage();
+    }
+
+    verifyUserShouldLoginMsg() {
+        this.#txtCheckoutAlert().should('contain', 'Register / Login account to proceed on checkout.');
+        return this;
     }
 }
 

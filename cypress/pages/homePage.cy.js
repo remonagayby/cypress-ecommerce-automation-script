@@ -32,7 +32,7 @@ class HomePage {
     }
 
     #productsList() {
-        return cy.get('div[class="productinfo text-center"]');
+        return cy.get('div[class="productinfo text-center"]:visible');
     }
 
     #btnAddToCart() {
@@ -96,7 +96,6 @@ class HomePage {
             let randomIndex = Math.floor(Math.random() * numItems);;
             this.#btnAddToCart().eq(randomIndex).click();
         })
-
     return this;
     }
     

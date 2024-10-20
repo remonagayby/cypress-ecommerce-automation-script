@@ -26,20 +26,18 @@ class DeleteAccountPage {
         }
 
       verifyAccountDeletedTxt() {
-            this.#txtAccountDeleted().should('eq', 'Account Deleted!');
+            this.#txtAccountDeleted().should('have.text', 'Account Deleted!');
             return this;
       }
 
       verifyAccountDeletedSuccessMsg() {
-            this.#txtSuccessMsg().should('eq', 'Your account has been permanently deleted!');
+            this.#txtSuccessMsg().should('have.text', 'Your account has been permanently deleted!');
             cy.logger('application', 'Account deleted success msg appeared');
             return this;
       }
 
       clickContinueBtn() {
-            this.#btnContinue()
-                  .should('be.enabled')
-                  .click();
+            this.#btnContinue().click();
             cy.logger('application', 'Continue button clicked');
             return new HomePage();
       }

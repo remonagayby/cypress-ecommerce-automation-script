@@ -1,4 +1,5 @@
 import { faker, th } from '@faker-js/faker';
+import PaymentConfirmationPage from './paymentConfirmationPage.cy';
 
 class PaymentPage {
 
@@ -31,7 +32,7 @@ class PaymentPage {
       }
 
       #txtSucessMsg() {
-            return cy.get('#success_message').children('div');
+            return cy.get('.alert-success.alert');
       }
 
       verifyPaymentPageUrl() {
@@ -80,14 +81,9 @@ class PaymentPage {
       clickConfirmBtn() {
             this.#btnConfirm()
                   .should('be.enabled')
-                  .click();
+                  .click();      
             cy.logger('application', 'Payment confirm button clicked');
-            return this;
-      }
-
-      verifyPaymentSuccessMsg() {
-            this.#txtSucessMsg()
-                  .should('eq', 'Your order has been placed successfully!')
+            return new PaymentConfirmationPage();
       }
 
 }

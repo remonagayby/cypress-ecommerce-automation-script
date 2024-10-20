@@ -22,7 +22,7 @@ class CheckOutPage {
         }
 
       verifyItemsTotalPrice() {
-
+            return this;
       }
       
       clickPlaceOrderBtn() {

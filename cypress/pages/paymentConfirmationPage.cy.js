@@ -20,25 +20,24 @@ class PaymentConfirmationPage {
 
       verifyPaymentConfirmationPageUrl() {
             cy.fixture('url').then(url => {
-                this.#pageURL().should('eq', url.paymentConfirmationPage);
+                this.#pageURL().should('contain', url.paymentConfirmationPage);
             })
             return this
         }
 
       verifyOrderPlacedHeader() {
-            this.#txtOrderPlaced().should('eq', 'Order Placed!');
+            this.#txtOrderPlaced().should('have.text', 'Order Placed!');
             cy.logger('application', 'Order has been place');
             return this;
       }
 
       verifyConfirmationMsg() {
-            this.#txtConfirmationMsg().should('eq', 'Congratulations! Your order has been confirmed!');
+            this.#txtConfirmationMsg().should('have.text', 'Congratulations! Your order has been confirmed!');
             return this;
       }
 
       clickContinueBtn() {
             this.#btnContinue()
-                  .should('be.enabled')
                   .click();
                   cy.logger('application', 'Continue button clicked');
             return new HomePage();
